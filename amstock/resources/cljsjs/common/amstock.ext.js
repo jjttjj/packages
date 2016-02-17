@@ -1612,3 +1612,4 @@ AmCharts.CategoryAxis.prototype = {
   "createBalloon": function () {},
   "setBalloonBounds": function () {}
 };
+
