@@ -24,9 +24,11 @@
                        +lib-version+ ".zip")
              :checksum "7A96C5DC2177EF09294AF084CB1E7864"
              :unzip true)
-   (sift :move {#"^amcharts/amcharts\.js" "cljsjs/amstock/production/amcharts.inc.js"
-                #"^amcharts/amstock\.js" "cljsjs/amstock/production/amstock.inc.js"
-                #"^amcharts/serial\.js" "cljsjs/amstock/production/serial.inc.js"
+   (sift :move {#".*amcharts\.js$" "cljsjs/amstock/production/amcharts.inc.js"
+                #".*amstock\.js$" "cljsjs/amstock/production/amstock.inc.js"
+                #".*serial\.js$" "cljsjs/amstock/production/serial.inc.js"
                 ;;todo: themes, etc
                 })
+   (sift :include #{#"^cljsjs"})
+   (show :fileset true)
    (deps-cljs :name "cljsjs.amstock")))
